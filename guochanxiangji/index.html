@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产相机品牌专题页面，汇集大疆、海康威视、影石Insta360等主流品牌，提供国产相机选购指南、参数对比、热门机型推荐及行业趋势分析。">
+    <meta name="keywords" content="国产相机品牌,大疆,海康威视,影石Insta360,国产相机评测,运动相机">
+    <title>国产相机品牌-主流品牌盘点与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012; /* 醒目的红色，呼应相机快门或活力感 */
+            --primary-hover: #b3000f;
+            --text-main: #1a1a1a;
+            --text-secondary: #555555;
+            --text-light: #888888;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 8px;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://picsum.photos/seed/camera_lens/1920/600');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* 分类标签 */
+        .category-bar {
+            background-color: var(--bg-card);
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            padding: 8px 20px;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .category-item:hover, .category-item.active {
+            background-color: var(--text-main);
+            color: #fff;
+        }
+
+        /* 主体内容 */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* 品牌卡片网格 */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .brand-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .brand-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .brand-info {
+            padding: 20px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .brand-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            height: 42px; /* 限制高度 */
+            overflow: hidden;
+        }
+
+        .brand-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            background-color: #f5f5f5;
+            color: var(--text-light);
+            border-radius: 4px;
+        }
+
+        /* 选购指南列表 */
+        .guide-section {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .guide-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .guide-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .guide-item ul {
+            padding-left: 18px;
+        }
+
+        .guide-item li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            list-style-type: disc;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: none; /* 默认隐藏，JS控制 */
+            border-top: 1px solid transparent;
+            padding-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            padding-top: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 13px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; } /* 简化版：移动端隐藏菜单 */
+            .guide-list { grid-template-columns: 1fr; }
+            .section-title { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <span>智选影像</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">国产相机品牌</a>
+                <a href="#brands">品牌大全</a>
+                <a href="#guide">选购指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>探索国产影像力量</h1>
+            <p>从大疆灵动到海康威视，盘点当下最具代表性的国产相机品牌，为您提供专业、可靠的拍摄设备参考。</p>
+            <a href="#brands" class="hero-btn">查看品牌推荐</a>
+        </div>
+    </section>
+
+    <!-- 分类导航 -->
+    <div class="category-bar">
+        <div class="container">
+            <div class="category-list">
+                <div class="category-item active">全部</div>
+                <div class="category-item">运动相机</div>
+                <div class="category-item">全景相机</div>
+                <div class="category-item">智能相机</div>
+                <div class="category-item">无人机航拍</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <main class="container">
+        
+        <!-- 品牌推荐区 -->
+        <section id="brands">
+            <h2 class="section-title">热门国产相机品牌</h2>
+            <div class="brand-grid">
+                <!-- 品牌 1: 大疆 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/dji/400/250" alt="大疆 DJI" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">大疆 DJI</h3>
+                        <p class="brand-desc">全球领先的无人机及智能飞行控制系统提供商，其DJI Osmo系列已成为运动相机市场的标杆。</p>
+                        <div class="brand-tags">
+                            <span class="tag">运动相机</span>
+                            <span class="tag">航拍</span>
+                            <span class="tag">稳定性强</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 品牌 2: 影石 Insta360 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/insta360/400/250" alt="影石 Insta360" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">影石 Insta360</h3>
+                        <p class="brand-desc">专注于全景影像解决方案，以360度全景视频拍摄技术闻名，产品便携且功能强大。</p>
+                        <div class="brand-tags">
+                            <span class="tag">全景相机</span>
+                            <span class="tag">4K/8K</span>
+                            <span class="tag">防抖</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 品牌 3: 海康威视 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/hikvision/400/250" alt="海康威视" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">海康威视</h3>
+                        <p class="brand-desc">全球领先的安防解决方案提供商，其民用及专业级相机产品在工业检测和特定场景应用中表现出色。</p>
+                        <div class="brand-tags">
+                            <span class="tag">工业相机</span>
+                            <span class="tag">安防</span>
+                            <span class="tag">高精度</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 品牌 4: 零度智控 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/zero/400/250" alt="零度智控" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">零度智控</h3>
+                        <p class="brand-desc">专注于全景相机及VR影像设备的研发，为影视制作和直播行业提供全景解决方案。</p>
+                        <div class="brand-tags">
+                            <span class="tag">全景相机</span>
+                            <span class="tag">影视级</span>
+                            <span class="tag">直播</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 品牌 5: 纵横股份 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/indoor/400/250" alt="纵横股份" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">纵横股份</h3>
+                        <p class="brand-desc">国内工业级无人机领域的先行者，提供垂直起降固定翼无人机及光电吊舱设备。</p>
+                        <div class="brand-tags">
+                            <span class="tag">工业无人机</span>
+                            <span class="tag">测绘</span>
+                            <span class="tag">电力巡检</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 品牌 6: 魔爪 -->
+                <article class="brand-card">
+                    <img src="https://picsum.photos/seed/moza/400/250" alt="魔爪" class="brand-img">
+                    <div class="brand-info">
+                        <h3 class="brand-name">魔爪</h3>
+                        <p class="brand-desc">大疆旗下品牌，专注于提供高品质的稳定器产品，让移动拍摄更加流畅稳定。</p>
+                        <div class="brand-tags">
+                            <span class="tag">稳定器</span>
+                            <span class="tag">手持云台</span>
+                            <span class="tag">手机拍摄</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 选购指南 -->
+        <section id="guide">
+            <h2 class="section-title">国产相机选购指南</h2>
+            <div class="guide-section">
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <h3>明确使用场景</h3>
+                        <p>国产相机品牌通常在特定领域具有优势。如果您主要进行户外运动拍摄，大疆和影石是首选；如果是工业检测或安防监控，海康威视等厂商的产品更为专业。</p>
+                        <ul>
+                            <li><strong>运动记录：</strong>关注防水、防抖和续航能力。</li>
+                            <li><strong>全景创作：</strong>关注360度全景拼接算法和单镜头画质。</li>
+                            <li><strong>专业航拍：</strong>关注飞行稳定性、图传距离和避障功能。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>关注核心参数</h3>
+                        <p>在对比不同品牌机型时，需重点关注视频分辨率（如4K、8K）、帧率、传感器尺寸以及镜头的可更换性。</p>
+                        <ul>
+                            <li><strong>传感器：</strong>传感器尺寸越大，进光量越足，画质通常越好。</li>
+                            <li><strong>防抖技术：</strong>对于手持或运动拍摄，电子防抖和机械防抖至关重要。</li>
+                            <li><strong>续航：</strong>户外拍摄需注意电池容量和充电方式。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">国产相机的画质与国际大牌相比如何？<span>+</span></div>
+                <div class="faq-answer">
+                    在运动相机和全景相机领域，国产头部品牌（如大疆、影石）的画质已达到国际领先水平，甚至部分参数超越传统品牌。但在专业单反/无反领域，国际老牌厂商（如索尼、佳能）在镜头群和色彩科学上仍保有优势，国产相机主要在便携性和特定功能上表现突出。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">购买国产相机需要考虑售后问题吗？<span>+</span></div>
+                <div class="faq-answer">
+                    国产主流品牌（如大疆、海康威视）在国内拥有完善的售后服务网络，维修和更换配件相对方便。购买前建议查询当地是否有官方授权服务中心，并了解保修政策。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">全景相机适合哪些人群？<span>+</span></div>
+                <div class="faq-answer">
+                    全景相机非常适合Vlog博主、旅游爱好者、建筑设计师以及需要记录大型活动现场的人群。它能够以一张照片或一段视频呈现全景视角，适合制作沉浸式的视频内容。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 13px; line-height: 1.8;">智选影像致力于为摄影爱好者和专业人士提供客观、详实的国产影像设备评测与选购建议。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门品牌</h4>
+                    <ul>
+                        <li><a href="#">大疆 DJI</a></li>
+                        <li><a href="#">影石 Insta360</a></li>
+                        <li><a href="#">海康威视</a></li>
+                        <li><a href="#">零度智控</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">相机参数对比</a></li>
+                        <li><a href="#">拍摄技巧教程</a></li>
+                        <li><a href="#">行业新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@chinese-camera.com</li>
+                        <li>电话：400-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 智选影像. 保留所有权利. 本站内容仅供参考，不构成购买建议。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 如果需要手风琴效果（一次只开一个），取消下面注释
+                    // faqItems.forEach(otherItem => {
+                    //     if (otherItem !== item) otherItem.classList.remove('active');
+                    // });
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 分类标签交互逻辑
+            const categoryItems = document.querySelectorAll('.category-item');
+            categoryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    categoryItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
