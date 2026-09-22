@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="英雄联盟韩服官方资料站，提供最新的韩服英雄、符文、出装攻略，以及韩服大神实战录像解析，助你快速提升段位。">
+    <meta name="keywords" content="英雄联盟韩服,韩服攻略,LOL韩服出装,韩服符文,英雄联盟">
+    <title>英雄联盟韩服-韩服英雄出装符文与实战攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5f7cfb;
+            --secondary-color: #1a1f36;
+            --accent-color: #ff9f43;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --nav-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--nav-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #4b6cdb;
+            transform: translateY(-1px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #2c3e50 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(95, 124, 251, 0.3) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .hero-image {
+            width: 400px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+
+        /* 通用 Section */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* 英雄列表 */
+        .champions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .champion-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .champion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .champion-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background-color: #eee;
+        }
+
+        .champion-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .champion-role {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* 游戏模式 */
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .mode-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mode-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(95, 124, 251, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .mode-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .mode-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .mode-tags span {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #f0f2f5;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-right: 5px;
+        }
+
+        /* 攻略与资讯 */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-item {
+            display: flex;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s;
+        }
+
+        .article-item:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-thumb {
+            width: 240px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .article-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .article-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* 侧边栏 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-name {
+            font-weight: 500;
+        }
+
+        .rank-score {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .rank-bar-bg {
+            width: 100%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .rank-bar-fill {
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        /* 常见问题 */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 200px;
+                margin-top: 30px;
+            }
+
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .article-item {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <span>League</span>GG
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">韩服首页</a>
+                <a href="#">英雄图鉴</a>
+                <a href="#">符文出装</a>
+                <a href="#">观战录像</a>
+                <a href="#">社区讨论</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册账号</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>英雄联盟韩服：全球最强竞技场</h1>
+                    <p>实时追踪韩服Top 1数据，深度解析国服可抄作业的韩服强势套路。从T0上分英雄到版本隐藏机制，一手掌握韩服节奏。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
+                        <button class="btn btn-primary">查看当前版本T0</button>
+                        <button class="btn btn-outline" style="border-color: white; color: white;">观看韩服教学</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>Top 1</h3>
+                            <p>胜率数据</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>150+</h3>
+                            <p>英雄覆盖</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24h</h3>
+                            <p>实时更新</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- 使用 Picsum 生成随机游戏风格图片 -->
+                    <img src="https://picsum.photos/seed/lolkorea/600/400" alt="英雄联盟韩服背景图">
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏模式 -->
+        <section class="container">
+            <div class="section-header">
+                <div>
+                    <h2>热门游戏模式</h2>
+                    <p>了解不同模式的玩法差异与上分策略</p>
+                </div>
+                <a href="#" style="color: var(--primary-color); font-weight: 600;">查看更多 &rarr;</a>
+            </div>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon">⚔️</div>
+                    <h3>排位模式</h3>
+                    <p>韩服排位竞争最为激烈，是检验玩家实力的最高舞台。掌握版本强势英雄是快速上分的唯一捷径。</p>
+                    <div class="mode-tags">
+                        <span>单双排</span>
+                        <span>灵活组排</span>
+                        <span>晋级赛</span>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🚀</div>
+                    <h3>极地大乱斗</h3>
+                    <p>娱乐与上分并存的选择。熟悉机制、掌握团战节奏，在极地大乱斗中也能轻松carry全场。</p>
+                    <div class="mode-tags">
+                        <span>娱乐模式</span>
+                        <span>随机英雄</span>
+                        <span>快速匹配</span>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🏰</div>
+                    <h3>云顶之弈</h3>
+                    <p>运营与博弈的艺术。紧跟韩服主流阵容，灵活调整站位与羁绊，在九九六的排位间隙享受策略乐趣。</p>
+                    <div class="mode-tags">
+                        <span>自走棋</span>
+                        <span>8人混战</span>
+                        <span>赛季更新</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 英雄图鉴 -->
+        <section class="container">
+            <div class="section-header">
+                <div>
+                    <h2>版本强势英雄</h2>
+                    <p>基于韩服大数据统计，当前版本胜率最高的上分英雄推荐</p>
+                </div>
+            </div>
+            <div class="champions-grid">
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion1/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">阿狸</div>
+                    <div class="champion-role">中单 / 刺客</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion2/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">亚索</div>
+                    <div class="champion-role">上单 / 刺客</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion3/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">艾希</div>
+                    <div class="champion-role">射手 / ADC</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion4/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">李青</div>
+                    <div class="champion-role">打野 / 战士</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion5/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">阿利斯塔</div>
+                    <div class="champion-role">辅助 / 奶妈</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion6/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">蕾欧娜</div>
+                    <div class="champion-role">辅助 / 坦克</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion7/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">凯特琳</div>
+                    <div class="champion-role">下路 / 射手</div>
+                </div>
+                <div class="champion-card">
+                    <img src="https://picsum.photos/seed/champion8/200/200" alt="英雄头像" class="champion-img">
+                    <div class="champion-name">沃里克</div>
+                    <div class="champion-role">打野 / 战士</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 攻略内容 -->
+        <section class="container">
+            <div class="content-layout">
+                <!-- 文章列表 -->
+                <div class="main-content">
+                    <div class="section-header">
+                        <h2>韩服实战攻略</h2>
+                    </div>
+                    <div class="article-list">
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/gameplay1/400/300" alt="攻略图片" class="article-thumb">
+                            <div class="article-body">
+                                <span class="article-tag">中单攻略</span>
+                                <h3 class="article-title">韩服T0中单阿狸玩法详解：如何利用R技能完成绝境反杀</h3>
+                                <p class="article-desc">本文将深入分析阿狸在韩服高分段的对线细节、技能连招顺序以及团战切入时机。掌握这些技巧，让你的阿狸胜率提升至55%以上。</p>
+                                <div class="article-meta">
+                                    <span>作者：韩服大神</span>
+                                    <span>更新：2023-10-24</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/gameplay2/400/300" alt="攻略图片" class="article-thumb">
+                            <div class="article-body">
+                                <span class="article-tag">上单教学</span>
+                                <h3 class="article-title">从青铜到王者：亚索上分通用连招与走位技巧</h3>
+                                <p class="article-desc">韩服亚索玩家普遍具备极强的风墙使用意识和EQ闪操作。本文整理了最实用的亚索连招教学，帮助新手快速入门，老手优化细节。</p>
+                                <div class="article-meta">
+                                    <span>作者：云顶攻略组</span>
+                                    <span>更新：2023-10-22</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/gameplay3/400/300" alt="攻略图片" class="article-thumb">
+                            <div class="article-body">
+                                <span class="article-tag">打野思路</span>
+                                <h3 class="article-title">新版打野节奏教学：如何利用野区资源滚起雪球</h3>
+                                <p class="article-desc">韩服打野位置竞争异常激烈。本文通过复盘高分段对局，讲解如何通过控龙、反野和游走来带动全队节奏，实现带飞全场。</p>
+                                <div class="article-meta">
+                                    <span>作者：野区小王子</span>
+                                    <span>更新：2023-10-20</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 侧边栏 -->
+                <aside>
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">韩服排位胜率榜</h4>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-name">阿狸</span>
+                                <span class="rank-score">52.4%</span>
+                            </li>
+                            <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 70%;"></div></div>
+                            <li>
+                                <span class="rank-name">亚索</span>
+                                <span class="rank-score">51.8%</span>
+                            </li>
+                            <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 65%;"></div></div>
+                            <li>
+                                <span class="rank-name">李青</span>
+                                <span class="rank-score">51.2%</span>
+                            </li>
+                            <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 60%;"></div></div>
+                            <li>
+                                <span class="rank-name">艾希</span>
+                                <span class="rank-score">50.9%</span>
+                            </li>
+                            <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 55%;"></div></div>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">热门符文推荐</h4>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-name">精密</span>
+                                <span class="rank-score">主系</span>
+                            </li>
+                            <li>
+                                <span class="rank-name">坚决</span>
+                                <span class="rank-score">副系</span>
+                            </li>
+                            <li>
+                                <span class="rank-name">主宰</span>
+                                <span class="rank-score">刺客</span>
+                            </li>
+                        </ul>
+                        <div style="margin-top: 15px; font-size: 12px; color: #666; text-align: center;">
+                            点击查看详细符文点法
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ 常见问题 -->
+        <section class="container">
+            <div class="section-header">
+                <h2>新手常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>如何查看韩服具体数据？</h4>
+                    <p>我们提供实时更新的韩服胜率、Ban率及出场率数据，您可以通过顶部的导航栏或英雄图鉴页面查询。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>韩服和国服有什么区别？</h4>
+                    <p>韩服作为全球服务器，通常拥有最新的英雄平衡性调整和更激烈的竞技环境，是练习高水平操作的最佳去处。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何进行韩服账号注册？</h4>
+                    <p>由于网络限制，国内玩家通常需要使用加速器连接至韩国节点，然后按照官网指引完成注册。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LeagueGG</h4>
+                    <p style="color: #aaa; font-size: 14px; line-height: 1.8;">
+                        专注于英雄联盟韩服数据的综合性攻略网站。为您提供最及时的英雄资讯、最准确的符文出装以及最实用的上分技巧。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">英雄列表</a></li>
+                        <li><a href="#">符文出装</a></li>
+                        <li><a href="#">观战大厅</a></li>
+                        <li><a href="#">英雄视频</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与帮助</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">B站直播</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LeagueGG英雄联盟韩服攻略网. All Rights Reserved. 本站内容仅供学习交流，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
