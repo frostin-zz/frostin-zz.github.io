@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ca1289-专业工控设备与自动化解决方案服务商</title>
+    <meta name="description" content="ca1289为您提供高品质工业控制器、自动化系统集成及智能设备维护服务。涵盖PLC编程、工业通讯协议调试及现场技术支持，助力企业实现高效自动化生产。">
+    <meta name="keywords" content="ca1289,工业控制器,自动化解决方案,PLC编程,工控设备">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8cc;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f4f6f9;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #00a8cc 100%);
+            color: #fff;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Services Grid */
+        .services {
+            background-color: var(--light-bg);
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--secondary-color);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 86, 179, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .service-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.3s;
+        }
+
+        .service-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .product-item:hover {
+            box-shadow: var(--card-shadow);
+            border-color: var(--secondary-color);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 40px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-cat {
+            font-size: 12px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* About/Features */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .features-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .features-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .features-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-list {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #e6f7ff;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* Contact/CTA */
+        .cta-section {
+            background-color: var(--dark-bg);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .cta-box {
+            background-color: rgba(255,255,255,0.05);
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #999;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 36px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .features { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 15px; }
+            nav ul { display: none; } /* Simplified mobile handling */
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 60px 0; }
+            .hero h1 { font-size: 28px; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .section-padding { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>ca1289</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#services">核心服务</a></li>
+                    <li><a href="#products">产品系列</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary">获取报价</a>
+                <div class="mobile-menu-btn">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ca1289 - 领先的工业自动化与控制解决方案</h1>
+                <p>专注于为制造业提供高效、稳定的工业控制器及自动化系统集成服务。从PLC编程到智能设备维护，ca1289助力您的生产线升级。</p>
+                <div class="cta-group">
+                    <a href="#services" class="btn" style="background: #fff; color: var(--primary-color);">探索服务</a>
+                    <a href="#contact" class="btn btn-outline" style="border-color: #fff; color: #fff; margin-left: 10px;">联系专家</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>行业经验</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>成功案例</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>技术支持</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding services">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>核心服务领域</h2>
+                <p>ca1289提供全方位的工业自动化支持，满足不同场景下的控制需求</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="icon-box">⚙️</div>
+                    <h3>工业控制器集成</h3>
+                    <p>提供高性能PLC、DCS系统的选型、安装与调试服务，确保控制系统稳定运行。</p>
+                    <a href="#" class="service-link">了解详情</a>
+                </article>
+                <article class="service-card">
+                    <div class="icon-box">💻</div>
+                    <h3>PLC编程与维护</h3>
+                    <p>专业的梯形图与结构化编程服务，支持西门子、三菱等主流品牌，快速响应故障。</p>
+                    <a href="#" class="service-link">查看案例</a>
+                </article>
+                <article class="service-card">
+                    <div class="icon-box">📡</div>
+                    <h3>工业通讯协议调试</h3>
+                    <p>解决Modbus、Profinet、EtherCAT等通讯协议的组网与数据交互问题。</p>
+                    <a href="#" class="service-link">技术支持</a>
+                </article>
+                <article class="service-card">
+                    <div class="icon-box">🔧</div>
+                    <h3>自动化设备维护</h3>
+                    <p>提供定期巡检、预防性维护及大修服务，延长设备使用寿命。</p>
+                    <a href="#" class="service-link">预约维护</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>产品与解决方案</h2>
+                <p>精选工业级硬件与软件工具，打造高效自动化工作流</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-item">
+                    <div class="product-img">🧊</div>
+                    <div class="product-info">
+                        <span class="product-cat">控制器</span>
+                        <h4 class="product-title">高性能工业网关</h4>
+                        <div class="product-meta">
+                            <span>支持多协议</span>
+                            <span>现货</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">📟</div>
+                    <div class="product-info">
+                        <span class="product-cat">显示终端</span>
+                        <h4 class="product-title">工业HMI触摸屏</h4>
+                        <div class="product-meta">
+                            <span>10.1英寸</span>
+                            <span>7x24h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">🔌</div>
+                    <div class="product-info">
+                        <span class="product-cat">模块配件</span>
+                        <h4 class="product-title">数字量/模拟量模块</h4>
+                        <div class="product-meta">
+                            <span>高精度</span>
+                            <span>工业级</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">🛠️</div>
+                    <div class="product-info">
+                        <span class="product-cat">工具软件</span>
+                        <h4 class="product-title">组态软件授权</h4>
+                        <div class="product-meta">
+                            <span>可视化</span>
+                            <span>正版</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn btn-outline">浏览全系列目录</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Features Section -->
+    <section id="about" class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="features">
+                <div class="features-image">
+                    <!-- Using a placeholder image with industrial context -->
+                    <img src="https://picsum.photos/seed/ca1289-industrial/600/400" alt="工业自动化生产线示意图" loading="lazy">
+                </div>
+                <div class="features-content">
+                    <h2>为什么选择 ca1289？</h2>
+                    <p>在工业4.0的浪潮中，ca1289致力于为制造企业提供可靠的控制方案。我们不仅提供硬件，更提供完整的系统思维。</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>专业技术团队</h4>
+                                <p style="font-size: 14px; color: #666;">拥有资深电气工程师和自动化专家，熟悉各类主流设备与协议。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>定制化开发能力</h4>
+                                <p style="font-size: 14px; color: #666;">根据客户特定需求，提供从底层代码到上层界面的定制化服务。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>快速响应机制</h4>
+                                <p style="font-size: 14px; color: #666;">设备故障时，我们的工程师能在规定时间内到达现场解决问题。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>准备好优化您的生产线了吗？</h2>
+                <p>无论是设备升级、系统调试还是技术咨询，ca1289随时准备为您提供专业支持。</p>
+                <a href="mailto:contact@ca1289.com" class="btn btn-primary" style="background-color: #fff; color: var(--primary-color);">发送咨询邮件</a>
+                <a href="tel:+861234567890" class="btn" style="background-color: transparent; border: 1px solid #fff; color: #fff; margin-left: 10px;">拨打服务热线</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>ca1289</h2>
+                    <p>专注于工业自动化控制领域，致力于为全球制造业提供高效、智能、稳定的控制解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#products">产品中心</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">技术文档</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">售后政策</a></li>
+                        <li><a href="#">下载中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>地址：中国某市高新技术开发区88号</li>
+                        <li>电话：+86 123 4567 8900</li>
+                        <li>邮箱：support@ca1289.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ca1289 工业自动化科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
